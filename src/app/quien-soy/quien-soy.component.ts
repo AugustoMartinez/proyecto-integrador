@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './quien-soy.component.css'
 })
 export class QuienSoyComponent {
-
+  nombre : string = "Augusto"
+  apellido : string = "Martinez"
+  imagen! : string
+  explicacion : string = "Juego de estilo beatem-ups"
+  
 }
