@@ -1,0 +1,23 @@
+ .quiz-container {
+      text-align: center;
+      padding: 20px;
+    }
+    .pokemon-img {
+      width: 200px;
+      image-rendering: pixelated;
+    }
+    .options {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .stats {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }

@@ -1,0 +1,24 @@
+<div class="game-container">
+  <h1>Juego: ¿Mayor o Menor?</h1>
+
+  <div class="card">
+    <p>
+      Carta actual: <strong>{{ currentCard }}</strong>
+    </p>
+  </div>
+
+  <div class="buttons">
+    <button (click)="guess('mayor')">Mayor</button>
+    <button (click)="guess('menor')">Menor</button>
+  </div>
+
+  <div class="info">
+    <p *ngIf="nextCard !== null">
+      Siguiente carta: <strong>{{ nextCard }}</strong>
+    </p>
+    <p>Puntaje: {{ score }}</p>
+    <p *ngIf="gameOver">¡Perdiste! Tu puntaje fue {{ score }}.</p>
+  </div>
+
+  <button *ngIf="gameOver" (click)="resetGame()">Reiniciar</button>
+</div>

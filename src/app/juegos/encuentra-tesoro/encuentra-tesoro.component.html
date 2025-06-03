@@ -1,0 +1,19 @@
+<h2>Encuentra el Tesoro 🏴‍☠️</h2>
+<div>
+  <strong>Intentos:</strong> {{ attempts }} / {{ maxAttempts }} <br />
+  <strong>Mejor puntuación:</strong> {{ bestScore || "—" }}
+</div>
+
+<div style="margin-top: 1rem">
+  <div *ngFor="let row of grid; let y = index">
+    <div
+      *ngFor="let cell of row; let x = index"
+      [ngStyle]="getCellStyle(x, y)"
+      (click)="handleClick(x, y)"
+    ></div>
+  </div>
+</div>
+
+<p style="margin-top: 1rem; font-weight: bold">{{ message }}</p>
+
+<button (click)="startGame()" style="margin-top: 1rem">Reiniciar</button>

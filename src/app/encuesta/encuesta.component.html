@@ -1,0 +1,79 @@
+<h2>Encuesta</h2>
+
+<form [formGroup]="form" (ngSubmit)="enviar()">
+  <label>Nombre y apellido:</label>
+  <input type="text" formControlName="nombre" />
+  <div *ngIf="form.get('nombre')?.invalid && form.get('nombre')?.touched">
+    Requerido.
+  </div>
+
+  <label>Edad:</label>
+  <input type="number" formControlName="edad" />
+  <div *ngIf="form.get('edad')?.invalid && form.get('edad')?.touched">
+    Edad válida: entre 18 y 99.
+  </div>
+
+  <label>Teléfono:</label>
+  <input type="text" formControlName="telefono" />
+  <div *ngIf="form.get('telefono')?.invalid && form.get('telefono')?.touched">
+    Solo números (máx. 10).
+  </div>
+
+  <hr />
+
+  <label>1. ¿Con qué frecuencia usás la app? (elige una):</label><br />
+  <label
+    ><input type="radio" formControlName="pregunta1" value="Diariamente" />
+    Diariamente</label
+  ><br />
+  <label
+    ><input type="radio" formControlName="pregunta1" value="Semanalmente" />
+    Semanalmente</label
+  ><br />
+  <label
+    ><input type="radio" formControlName="pregunta1" value="Raramente" />
+    Raramente</label
+  >
+
+  <hr />
+
+  <label
+    >2. ¿Qué características te interesan? (marca todas las que
+    apliquen):</label
+  ><br />
+  <label
+    ><input
+      type="checkbox"
+      value="Notificaciones"
+      (change)="onCheck($event, 'pregunta2')"
+    />
+    Notificaciones</label
+  ><br />
+  <label
+    ><input
+      type="checkbox"
+      value="Gráficos"
+      (change)="onCheck($event, 'pregunta2')"
+    />
+    Gráficos</label
+  ><br />
+  <label
+    ><input
+      type="checkbox"
+      value="Modo oscuro"
+      (change)="onCheck($event, 'pregunta2')"
+    />
+    Modo oscuro</label
+  >
+
+  <hr />
+
+  <label>3. Comentarios adicionales:</label><br />
+  <textarea rows="3" formControlName="pregunta3"></textarea>
+
+  <hr />
+
+  <button type="submit">Enviar</button>
+</form>
+
+<p>{{ mensaje }}</p>

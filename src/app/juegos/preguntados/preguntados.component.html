@@ -1,0 +1,30 @@
+<div class="quiz-container" *ngIf="pokemonImage">
+  <h1>¿Quién es ese Pokémon?</h1>
+
+  <img
+    [src]="pokemonImage"
+    class="pokemon-img"
+    alt="Pokémon"
+    [style.filter]="showAnswer ? 'none' : 'brightness(0)'"
+  />
+
+  <div class="options">
+    <button
+      *ngFor="let option of options"
+      [disabled]="showAnswer"
+      (click)="checkAnswer(option)"
+    >
+      {{ option }}
+    </button>
+  </div>
+
+  <div *ngIf="showAnswer">
+    <p>{{ isCorrect ? "¡Correcto!" : "Incorrecto..." }}</p>
+    <button (click)="loadQuestion()">Siguiente</button>
+  </div>
+
+  <div class="stats">
+    <p>Puntos: {{ score }} | Récord: {{ bestScore }}</p>
+    <p>Tiempo restante: {{ timer }}s</p>
+  </div>
+</div>

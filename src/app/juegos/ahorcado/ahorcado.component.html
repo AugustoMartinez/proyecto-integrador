@@ -1,0 +1,36 @@
+<div class="ahorcado-container">
+  <h1>Juego del Ahorcado</h1>
+
+  <div class="palabra">
+    {{ obtenerPalabraConGuiones() }}
+  </div>
+
+  <div class="intentos">Intentos restantes: {{ intentosRestantes }}</div>
+
+  <div class="teclado">
+    @for(letra of letrasDisponibles; track $index){
+    <button
+      (click)="seleccionarLetra(letra)"
+      [disabled]="estaDeshabilitada(letra)"
+      class="border border-gray-600 disabled:bg-gray-600 disabled:text-white"
+    >
+      {{ letra }}
+    </button>
+    }
+  </div>
+  @if (mensajeFinal) {
+  <div class="mensaje">
+    <strong>{{ mensajeFinal }}</strong>
+  </div>
+  }
+  <div class="puntaje">Mejor puntaje: {{ mejorPuntaje }}</div>
+  <div class="puntaje">Puntaje Actual: {{ puntajeActual }}</div>
+  <button
+    (click)="iniciarJuego()"
+    class="bg-blue-400 p-4 rounded-2xl cursor-pointer"
+  >
+    Reiniciar juego
+  </button>
+</div>
+<!--[ngClass]=" estaDeshabilitada(letra) && esErronea(letra) ? 'bg-red-600' : ''
+"*/-->

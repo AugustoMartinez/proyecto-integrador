@@ -1,0 +1,36 @@
+.ahorcado-container {
+  text-align: center;
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.palabra {
+  font-size: 2rem;
+  letter-spacing: 10px;
+  margin-bottom: 20px;
+}
+
+.intentos {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.teclado {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.teclado button {
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.mensaje {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
